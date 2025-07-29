@@ -1281,30 +1281,94 @@ audio {
 	font-weight: bold;
 }
 
+
 .btn-primary {
-        border-color: #466baf;
-        padding: 10px;
-        text-transform: uppercase;
-        font-family: 'Signika', sans-serif;
-        font-weight: 700;
-        color: #fff;
-        background-color: #466baf;
+	border: none;
+	padding: 12px 24px;
+	text-transform: uppercase;
+	font-family: 'Signika', sans-serif;
+	font-weight: 700;
+	color: #fff;
+	background: linear-gradient(90deg, #ff6a88 0%, #ffcc70 100%);
+	box-shadow: 0 4px 15px rgba(255, 106, 136, 0.2);
+	border-radius: 30px;
+	font-size: 18px;
+	transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
+	position: relative;
+	margin: 8px 6px;
+	outline: none;
 }
-    .btn-primary:hover,
-    .btn-primary:focus,
-    .btn-primary:active,
-    .btn-primary.active,
-    .open .dropdown-toggle.btn-primary {
-        border-color: #fff;
-        color: #fff;
-        background-color: #466baf;
-    }
+.btn-primary:hover, .btn-primary:focus {
+	background: linear-gradient(90deg, #ffcc70 0%, #ff6a88 100%);
+	color: #fff;
+	transform: scale(1.08) rotate(-2deg);
+	box-shadow: 0 8px 24px rgba(255, 106, 136, 0.3);
+}
+.btn-primary:active {
+	transform: scale(0.97);
+	box-shadow: 0 2px 8px rgba(255, 106, 136, 0.15);
+}
+.btn-primary .btn-icon {
+	margin-right: 8px;
+	font-size: 20px;
+	vertical-align: middle;
+}
 
 
 
-    /*controlling tablet width*/
-    /*@media only screen and (max-width: 720px){
-    	.container {
-    		-webkit-transform: scale(0.9);
-    	}
-    }*/
+
+/* Responsive for mobile devices */
+@media only screen and (max-width: 720px) {
+	body {
+		font-size: 16px;
+		padding: 0;
+		margin: 0;
+	}
+	.container {
+		width: 100%;
+		padding: 0 5px;
+		margin: 0;
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+	.balloons {
+		width: 60px;
+		height: 110px;
+		background-size: 60px 110px;
+		font-size: 28px;
+	}
+	.balloons h2 {
+		font-size: 28px;
+	}
+	.balloon-border {
+		width: 100vw;
+		min-width: 100vw;
+	}
+	.btn-primary {
+		font-size: 15px;
+		padding: 10px 12px;
+		border-radius: 22px;
+		margin: 6px 2px;
+	}
+	.navbar-fixed-bottom {
+		position: static;
+		margin-top: 20px;
+	}
+	.cake-cover {
+		margin-top: 20px;
+	}
+	.message {
+		margin-top: 80px;
+	}
+	.message p {
+		font-size: 18px;
+	}
+	.bulb-holder {
+		height: 50px;
+	}
+	.bulb {
+		width: 32px;
+		height: 32px;
+		background-size: 32px 32px;
+	}
+}
