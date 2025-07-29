@@ -1237,10 +1237,31 @@ audio {
 .balloons h2 {
 	text-transform: uppercase;
 	font-family: 'Signika', sans-serif;
-	font-size: 50px;
+	font-size: 4vw; /* Responsive font size */
 	color: #BF4136;
-	text-shadow: 5px 5px 5px #FFF;
+	text-shadow: 0 0 10px rgba(255,255,255,0.8);
 	display: none;
+	transition: all 0.3s ease;
+	animation: letterGlow 2s infinite;
+}
+
+@keyframes letterGlow {
+	0% { text-shadow: 0 0 10px rgba(255,255,255,0.8); }
+	50% { text-shadow: 0 0 20px rgba(255,255,255,1), 0 0 30px rgba(255,182,193,0.8); }
+	100% { text-shadow: 0 0 10px rgba(255,255,255,0.8); }
+}
+
+/* Responsive text sizing for different screen sizes */
+@media (max-width: 768px) {
+	.balloons h2 {
+		font-size: 6vw;
+	}
+}
+
+@media (max-width: 480px) {
+	.balloons h2 {
+		font-size: 8vw;
+	}
 }
 #b1,#b11 {
 	background-image: url('b1.png');
