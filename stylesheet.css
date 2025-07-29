@@ -1,5 +1,4 @@
 body {
-	/*background-color: #FFDAB9;	*/
 	background-color: #000;
 	-webkit-transition:background-color linear 5s;
 	-moz-transition:background-color linear 5s;
@@ -8,8 +7,36 @@ body {
 	transition:background-color linear 5s;
 	overflow-x:hidden;
 }
+
+/* Responsive container */
 .container {
 	display: none;
+	padding: 0 15px;
+	max-width: 100%;
+}
+
+/* Responsive text sizing */
+p, h2, button {
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+/* Responsive images */
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* Responsive balloon size */
+.balloons {
+	display: inline-block;
+	width: 100px;
+	height: 140px;
+	margin: 5px;
+}
+
+.balloons h2 {
+	font-size: 2.5rem;
 }
 .peach {
 	background-color: #FFDAB9;
@@ -1344,7 +1371,109 @@ audio {
 		width: 100vw;
 		min-width: 100vw;
 	}
-	.btn-primary {
+
+/* Global Responsive Styles */
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.container {
+	padding: 0 15px;
+	max-width: 100%;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+	.balloons {
+		width: 80px;
+		height: 120px;
+		margin: 3px;
+	}
+
+	.balloons h2 {
+		font-size: 2rem;
+	}
+
+	.cake {
+		transform: scale(0.7);
+		margin: 0 auto;
+	}
+
+	.message p {
+		font-size: 1em;
+		padding: 0 15px;
+		margin-bottom: 8px !important;
+	}
+
+	.navbar-fixed-bottom {
+		padding: 8px 0;
+	}
+
+	.navbar-fixed-bottom .btn {
+		font-size: 12px;
+		padding: 8px;
+		margin: 4px;
+		white-space: normal;
+		height: auto;
+		min-height: 40px;
+	}
+
+	.bulb {
+		width: 35px;
+		height: 35px;
+		background-size: 35px 35px;
+	}
+
+	.bulb-holder {
+		height: 50px;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.balloons {
+		width: 60px;
+		height: 90px;
+		margin: 2px;
+	}
+
+	.balloons h2 {
+		font-size: 1.5rem;
+	}
+
+	.cake {
+		transform: scale(0.5);
+	}
+
+	.message p {
+		font-size: 0.9em;
+		padding: 0 10px;
+		margin-bottom: 6px !important;
+	}
+
+	.navbar-fixed-bottom .btn {
+		font-size: 11px;
+		padding: 6px;
+		margin: 2px;
+		min-height: 35px;
+	}
+
+	.bulb {
+		width: 25px;
+		height: 25px;
+		background-size: 25px 25px;
+	}
+
+	.bulb-holder {
+		height: 40px;
+	}
+
+	.container {
+		padding: 0 10px;
+	}
+}
+
+.btn-primary {
 		font-size: 15px;
 		padding: 10px 12px;
 		border-radius: 22px;
