@@ -33,11 +33,44 @@ img {
 	width: 100px;
 	height: 140px;
 	margin: 5px;
+	animation: floatAnimation 3s ease-in-out infinite;
+	position: relative;
 }
 
 .balloons h2 {
 	font-size: 2.5rem;
+	transition: transform 0.3s ease;
 }
+
+.balloons:hover h2 {
+	transform: scale(1.1);
+}
+
+/* Floating animation for balloons */
+@keyframes floatAnimation {
+	0% {
+		transform: translateY(0) rotate(0deg);
+	}
+	33% {
+		transform: translateY(-10px) rotate(2deg);
+	}
+	66% {
+		transform: translateY(5px) rotate(-2deg);
+	}
+	100% {
+		transform: translateY(0) rotate(0deg);
+	}
+}
+
+/* Different timing for each balloon */
+#b1 { animation-delay: 0s; }
+#b2 { animation-delay: 0.2s; }
+#b3 { animation-delay: 0.4s; }
+#b4 { animation-delay: 0.6s; }
+#b5 { animation-delay: 0.8s; }
+#b6 { animation-delay: 1.0s; }
+#b7 { animation-delay: 1.2s; }
+#b8 { animation-delay: 1.4s; }
 .peach {
 	background-color: #FFDAB9;
 	
