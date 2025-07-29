@@ -30,37 +30,16 @@ img {
 /* Responsive balloon size */
 .balloons {
 	display: inline-block;
-	width: 40px;
-	height: 50px;
-	margin: 2px;
+	width: 100px;
+	height: 140px;
+	margin: 5px;
 	animation: floatAnimation 3s ease-in-out infinite;
 	position: relative;
 }
 
 .balloons h2 {
-	font-size: 24px;
-	line-height: 1;
+	font-size: 2.5rem;
 	transition: transform 0.3s ease;
-	margin: 0;
-	padding: 0;
-}
-
-@media screen and (min-width: 768px) {
-	.balloons {
-		width: 100px;
-		height: 140px;
-		margin: 5px;
-	}
-	
-	.balloons h2 {
-		font-size: 2.5rem;
-	}
-	
-	.balloons-wrapper {
-		max-width: 100% !important;
-		gap: 5px !important;
-		padding: 0 10px !important;
-	}
 }
 
 .balloons:hover h2 {
