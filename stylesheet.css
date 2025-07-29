@@ -33,36 +33,71 @@ img {
 	width: 100px;
 	height: 140px;
 	margin: 5px;
-	animation: floatAnimation 3s ease-in-out infinite;
 	position: relative;
+	animation: floatSideways 8s ease-in-out infinite;
+	transform-origin: bottom center;
 }
 
 .balloons h2 {
 	font-size: 2.5rem;
-	transition: transform 0.3s ease;
+	animation: letterPulse 2s ease-in-out infinite;
+	display: inline-block;
+	transform-origin: center;
+	transition: all 0.3s ease;
+	text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
 
 .balloons:hover h2 {
-	transform: scale(1.1);
+	transform: scale(1.2) rotate(5deg);
+	text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
 }
 
-/* Floating animation for balloons */
-@keyframes floatAnimation {
+/* Side-to-side floating animation for balloons */
+@keyframes floatSideways {
 	0% {
-		transform: translateY(0) rotate(0deg);
+		transform: translateX(0) translateY(0) rotate(0deg);
 	}
-	33% {
-		transform: translateY(-10px) rotate(2deg);
+	25% {
+		transform: translateX(30px) translateY(-15px) rotate(5deg);
 	}
-	66% {
-		transform: translateY(5px) rotate(-2deg);
+	50% {
+		transform: translateX(0) translateY(-25px) rotate(0deg);
+	}
+	75% {
+		transform: translateX(-30px) translateY(-15px) rotate(-5deg);
 	}
 	100% {
-		transform: translateY(0) rotate(0deg);
+		transform: translateX(0) translateY(0) rotate(0deg);
 	}
 }
 
-/* Different timing for each balloon */
+/* Letter pulse animation */
+@keyframes letterPulse {
+	0% {
+		transform: scale(1) rotate(-2deg);
+	}
+	50% {
+		transform: scale(1.1) rotate(2deg);
+	}
+	100% {
+		transform: scale(1) rotate(-2deg);
+	}
+}
+
+/* Letter wobble animation */
+@keyframes letterWobble {
+	0% {
+		transform: rotate(-3deg) scale(1);
+	}
+	50% {
+		transform: rotate(3deg) scale(1.1);
+	}
+	100% {
+		transform: rotate(-3deg) scale(1);
+	}
+}
+
+/* Stagger balloon animations */
 #b1 { animation-delay: 0s; }
 #b2 { animation-delay: 0.2s; }
 #b3 { animation-delay: 0.4s; }
@@ -70,7 +105,61 @@ img {
 #b5 { animation-delay: 0.8s; }
 #b6 { animation-delay: 1.0s; }
 #b7 { animation-delay: 1.2s; }
-#b8 { animation-delay: 1.4s; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+	.balloons {
+		width: 80px;
+		height: 120px;
+	}
+	.balloons h2 {
+		font-size: 2rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.balloons {
+		width: 60px;
+		height: 90px;
+	}
+	.balloons h2 {
+		font-size: 1.5rem;
+	}
+}
+
+/* Different timing and movement pattern for each balloon */
+#b1 { 
+    animation: floatSideways 8s ease-in-out infinite;
+    animation-delay: 0s; 
+}
+#b2 { 
+    animation: floatSideways 8s ease-in-out infinite reverse;
+    animation-delay: 0.5s; 
+}
+#b3 { 
+    animation: floatSideways 8s ease-in-out infinite;
+    animation-delay: 1s; 
+}
+#b4 { 
+    animation: floatSideways 8s ease-in-out infinite reverse;
+    animation-delay: 1.5s; 
+}
+#b5 { 
+    animation: floatSideways 8s ease-in-out infinite;
+    animation-delay: 2s; 
+}
+#b6 { 
+    animation: floatSideways 8s ease-in-out infinite reverse;
+    animation-delay: 2.5s; 
+}
+#b7 { 
+    animation: floatSideways 8s ease-in-out infinite;
+    animation-delay: 3s; 
+}
+#b8 { 
+    animation: floatSideways 8s ease-in-out infinite reverse;
+    animation-delay: 3.5s; 
+}
 .peach {
 	background-color: #FFDAB9;
 	
@@ -1414,6 +1503,64 @@ img {
 .container {
 	padding: 0 15px;
 	max-width: 100%;
+}
+
+.profile-picture {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 8px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    opacity: 0;
+    transform: translateY(30px) scale(0.8);
+    animation: revealPhoto 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    margin: 30px auto;
+    display: block;
+    transition: all 0.3s ease;
+    position: relative;
+    background: #fff;
+}
+
+.profile-picture:hover {
+    transform: scale(1.05);
+    border-color: #fff;
+    box-shadow: 0 0 30px rgba(0,0,0,0.4);
+}
+
+@keyframes revealPhoto {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.8);
+        filter: blur(10px);
+    }
+    50% {
+        opacity: 0.8;
+        transform: translateY(10px) scale(0.9);
+        filter: blur(5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+/* Responsive adjustments for profile picture */
+@media (max-width: 768px) {
+    .profile-picture {
+        width: 200px;
+        height: 200px;
+        border-width: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-picture {
+        width: 150px;
+        height: 150px;
+        border-width: 4px;
+    }
 }
 
 /* Media Queries */
